@@ -1,0 +1,121 @@
+body .logo-text {
+  color: #2ecbd0;
+  margin: 0%;
+  font-size: 36px;
+}
+body .container-fluid {
+  justify-content: start !important;
+}
+body .container-fluid img {
+  width: 40px;
+  height: 32px;
+}
+body .tab-section {
+  width: 260px;
+  height: 92vh;
+  padding-left: 20px;
+}
+body .btn-brand {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0.35rem;
+  width: 220px;
+  color: #2ecbd0;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+body .btn-brand p {
+  margin: 0;
+}
+body .nav-link.active {
+  font-weight: 900;
+  color: #2ecbd0 !important;
+  background-color: #cefdff !important;
+}
+body .nav-link:hover {
+  color: #2ecbd0;
+  background-color: #cefdff !important;
+}
+body .list-section {
+  gap: 20px;
+  margin-top: 50px;
+}
+body .projects-header {
+  color: #2ecbd0;
+  font-size: 28px;
+  margin-left: 24px;
+}
+body .add-project-container {
+  padding: 0;
+}
+body .add-task-form {
+  margin-top: 20px;
+  padding: 0%;
+}
+body .add-task-form .closeform {
+  background-color: #f5b2b2;
+  border: 1px solid #eeadad;
+}
+body .add-task-form .addtask {
+  background-color: #a6f0a6;
+  border: 1px solid #99dd99;
+}
+body .add-task-form .closeform, body .add-task-form .addtask {
+  font-weight: bold;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body .add-task-form .task-name {
+  width: 100%;
+  margin-bottom: 10px;
+}
+body .add-task-form .task-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+body .tab-content {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 2.5%;
+  display: flex;
+  justify-content: center;
+}
+body .tab-content h1 {
+  color: #2ecbd0;
+}
+body .tab-content #task-add, body .tab-content .tasks-list {
+  height: 44px;
+  width: 800px;
+  padding: 10px 20px;
+  background-color: #cefdff;
+  margin-top: 10px;
+}
+body .main {
+  display: flex;
+  justify-content: space-between;
+}
+body i {
+  font-size: 24px;
+}
+body .tasks {
+  display: flex !important;
+  background-color: transparent !important;
+  color: #2ecbd0;
+  justify-content: space-between;
+  align-items: center;
+}
+body .tasks .ri-close-line {
+  display: none;
+}
+body .tasks div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .tasks:hover .ri-close-line {
+  display: block;
+}/*# sourceMappingURL=style.css.map */
