@@ -1,4 +1,10 @@
 body {
+    #projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .logo-text {
         color: #2ecbd0;
         margin: 0%;
@@ -58,20 +64,21 @@ body {
     .add-project-container {
         padding: 0
     }
-    .add-task-form {
+    .add-project-form, .add-task-form {
+        display: none;
         margin-top: 20px;
         padding: 0%;
-        .closeform {
+        .close-form-project-btn, .close-form-task-btn {
             background-color: #f5b2b2;
             border: 1px solid #eeadad;
         }
     
-        .addtask {
+        .add-form-project-btn, .add-form-task-btn {
             background-color: #a6f0a6;
             border: 1px solid #99dd99;
         }
     
-        .closeform, .addtask {
+        .close-form-project-btn, .close-form-task-btn, .add-form-project-btn, .add-form-task-btn {
             font-weight: bold;
             width: 100%;
             padding: 10px 20px;
@@ -79,16 +86,20 @@ body {
             cursor: pointer;
         }
 
-        .task-name {
+        .task-name, .project-name {
             width: 100%;
             margin-bottom: 10px;
         }
 
-        .task-buttons {
+        .task-buttons, .project-buttons {
             display: flex;
             flex-direction: row;
             gap: 20px;
         }
+    }
+
+    .add-project-form.active, .add-task-form.active {
+        display: block;
     }
     
     .tab-content {
@@ -102,18 +113,45 @@ body {
             color: #2ecbd0;
         }
 
-        #task-add,.tasks-list {
+        #task-add,.tasks-list, .tasks {
             height: 44px;
             width: 800px;
             padding: 10px 20px;
             background-color: #cefdff;
             margin-top: 10px;
         }
+
+        .ri-checkbox-blank-circle-line {
+            margin-right: 10px;
+        }
     }
 
     .main {
         display: flex;
         justify-content: space-between;
+
+        .projects-button {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+
+        }
+
+        .projects-button:hover {
+            .ri-close-line {
+                display: block;
+                margin-left: 5px;
+            }
+        }
     }
 
     i {
@@ -124,9 +162,6 @@ body {
         display: flex !important; 
         background-color: transparent !important;
         color: #2ecbd0;
-        .ri-close-line {
-            display: none;
-        }
 
 
         div {
@@ -141,6 +176,18 @@ body {
     .tasks:hover {
         .ri-close-line {
             display: block;
+            margin-left: 5px;
         }
+    }
+    .ri-close-line {
+        display: none;
+    }
+
+    .input-due-date {
+        display: none;
+    }
+
+    .input-due-date.active {
+        display: block;
     }
 }
