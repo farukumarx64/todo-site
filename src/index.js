@@ -1,110 +1,23 @@
-import {listTab, listSection} from "./pages/list-section";
-import nav from "./pages/navbar";
-import { task } from "./pages/main-page";
+import UI from "./modules/todo-ui";
 
-// Navbar
-document.body.appendChild(nav)
-
-// Body
-let main = document.createElement('div')
-main.className = 'main'
-document.body.appendChild(main)
-
-// Tab
-main.insertAdjacentHTML('beforeend',listTab)
-main.insertAdjacentHTML('beforeend', listSection)
-let addProjectBtn = document.querySelector('#add-project')
-let addTaskBtn = document.querySelector('#task-add')
-var removeTask
-
-
-
-let form = document.createElement('div')
-form.classList.add('add-task-form', 'container')
-
-let taskName = document.createElement('input')
-taskName.className = 'task-name'
-
-let taskButtons = document.createElement('div')
-taskButtons.className = 'task-buttons'
-
-let addTask = document.createElement('button')
-addTask.textContent = 'ADD'
-addTask.className = 'addtask'
-
-let closeForm = document.createElement('button')
-closeForm.textContent = 'CLOSE'
-closeForm.className = 'closeform'
-
-let container = document.querySelector('.add-project-container');
-
-
-addProjectBtn.addEventListener('click', function () {
-    taskName.style.width = '100%';
-    taskName.value = '';
-
-    addProjectBtn.style.position = 'fixed';
-    addProjectBtn.setAttribute('style','display: none !important');
-    createForm();
-
-    container.appendChild(form);
-
-})
-
-function createForm() {
-    
-    form.appendChild(taskName);
-    taskButtons.appendChild(addTask);
-    taskButtons.appendChild(closeForm);
-    form.appendChild(taskButtons);
-
-}
-
-closeForm.addEventListener('click', closeFormFunction);
-
-addTaskBtn.addEventListener('click', function () {
-    addTaskBtn.style.position = 'fixed'
-    addTaskBtn.setAttribute('style','display: none !important')
-    createForm()
-    taskName.value = ''
-    taskName.style.width = '800px'
-    document.querySelector('#v-pills-inbox').appendChild(form)
-});
-
-addTask.addEventListener('click', addTaskFunction);
-
-function closeFormFunction() {
+function makeFormVisible() {
     addProjectBtn.style.position = 'static';
-    addProjectBtn.setAttribute('style','display: flex');
+    addProjectBtn.setAttribute('style', 'display: flex');
 
     addTaskBtn.style.position = 'static';
-    addTaskBtn.setAttribute('style','display: flex');
-
-    if (document.querySelector('#v-pills-inbox').contains(form)) document.querySelector('#v-pills-inbox').removeChild(form);
-    else container.removeChild(form);
-
+    addTaskBtn.setAttribute('style', 'display: flex');
 }
 
-console.log('yo')
+document.addEventListener('DOMContentLoaded', UI.loadHomepage)
 
-function addTaskFunction() {
-    if (taskName.value === '') {
-        
-    } else {
-        document.querySelector('#tasks-list').insertAdjacentHTML('afterbegin', task);
-        document.querySelector('#task-name').classList.add(taskName.value);
-        document.querySelector('#task-add').classList.add(`${taskName.value}-task`)
-        document.querySelector(`.${taskName.value}`).textContent = taskName.value.charAt(0).toUpperCase() + taskName.value.slice(1);
-        removeTask = document.querySelector(".check");
+export {makeFormVisible}
 
-        closeFormFunction();
-        
-    }
-}
-console.log('ababa', removeTask)
-if (removeTask != null) {
-    removeTask.addEventListener('click', function () {
-        console.log('it is working', taskName.value)
-        document.querySelector('#tasks-list').removeChild(document.querySelector(`.${taskName.value}-task`))
-    })
-}
+/* .innerHTML += `
+      <button class="nav-link d-flex list-tabs btn-brand projects-button" id="v-pills-${name.toLowerCase()}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-${name.toLowerCase()}" type="button" role="tab" aria-controls="v-pills-${name.toLowerCase()}" aria-selected="false" tabindex="-1">
+        <div>
+            <i class="ri-list-check-3"></i>
+            <p>${name.charAt(0).toUpperCase() +
+              name.slice(1)}</p>
+        </div>
+        <i class="ri-close-line check"></i>
+      </button>`; */

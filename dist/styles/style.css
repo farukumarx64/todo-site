@@ -1,3 +1,8 @@
+body #projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 body .logo-text {
   color: #2ecbd0;
   margin: 0%;
@@ -49,33 +54,37 @@ body .projects-header {
 body .add-project-container {
   padding: 0;
 }
-body .add-task-form {
+body .add-project-form, body .add-task-form {
+  display: none;
   margin-top: 20px;
   padding: 0%;
 }
-body .add-task-form .closeform {
+body .add-project-form .close-form-project-btn, body .add-project-form .close-form-task-btn, body .add-task-form .close-form-project-btn, body .add-task-form .close-form-task-btn {
   background-color: #f5b2b2;
   border: 1px solid #eeadad;
 }
-body .add-task-form .addtask {
+body .add-project-form .add-form-project-btn, body .add-project-form .add-form-task-btn, body .add-task-form .add-form-project-btn, body .add-task-form .add-form-task-btn {
   background-color: #a6f0a6;
   border: 1px solid #99dd99;
 }
-body .add-task-form .closeform, body .add-task-form .addtask {
+body .add-project-form .close-form-project-btn, body .add-project-form .close-form-task-btn, body .add-project-form .add-form-project-btn, body .add-project-form .add-form-task-btn, body .add-task-form .close-form-project-btn, body .add-task-form .close-form-task-btn, body .add-task-form .add-form-project-btn, body .add-task-form .add-form-task-btn {
   font-weight: bold;
   width: 100%;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
 }
-body .add-task-form .task-name {
+body .add-project-form .task-name, body .add-project-form .project-name, body .add-task-form .task-name, body .add-task-form .project-name {
   width: 100%;
   margin-bottom: 10px;
 }
-body .add-task-form .task-buttons {
+body .add-project-form .task-buttons, body .add-project-form .project-buttons, body .add-task-form .task-buttons, body .add-task-form .project-buttons {
   display: flex;
   flex-direction: row;
   gap: 20px;
+}
+body .add-project-form.active, body .add-task-form.active {
+  display: block;
 }
 body .tab-content {
   margin: 0 auto;
@@ -87,16 +96,36 @@ body .tab-content {
 body .tab-content h1 {
   color: #2ecbd0;
 }
-body .tab-content #task-add, body .tab-content .tasks-list {
+body .tab-content #task-add, body .tab-content .tasks-list, body .tab-content .tasks {
   height: 44px;
   width: 800px;
   padding: 10px 20px;
   background-color: #cefdff;
   margin-top: 10px;
 }
+body .tab-content .ri-checkbox-blank-circle-line {
+  margin-right: 10px;
+}
 body .main {
   display: flex;
   justify-content: space-between;
+}
+body .main .projects-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body .main .projects-button div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+body .main .projects-button:hover .ri-close-line {
+  display: block;
+  margin-left: 5px;
 }
 body i {
   font-size: 24px;
@@ -108,14 +137,21 @@ body .tasks {
   justify-content: space-between;
   align-items: center;
 }
-body .tasks .ri-close-line {
-  display: none;
-}
 body .tasks div {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 body .tasks:hover .ri-close-line {
+  display: block;
+  margin-left: 5px;
+}
+body .ri-close-line {
+  display: none;
+}
+body .input-due-date {
+  display: none;
+}
+body .input-due-date.active {
   display: block;
 }/*# sourceMappingURL=style.css.map */
